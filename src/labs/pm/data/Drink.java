@@ -37,10 +37,13 @@ public class Drink extends Product{
         // return super.getDiscount(); //To change body of generated methods, choose Tools | Templates.
     }
 
+   
     @Override
     public Product applyRating(Rating newRating) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new Drink(getId(), getName(), getPrice(), newRating);
     }
+
+   
     
     
     

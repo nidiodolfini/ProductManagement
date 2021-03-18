@@ -18,6 +18,7 @@ package labs.pm.data;
 
 import java.math.BigDecimal;
 import static java.math.RoundingMode.HALF_UP;
+import java.time.LocalDate;
 import java.util.Objects;
 import static labs.pm.data.Rating.NOT_RATED;
 
@@ -25,7 +26,7 @@ import static labs.pm.data.Rating.NOT_RATED;
  *
  * @author nidio
  */
-public abstract class Product {
+public abstract class Product implements Rateable<Product>{
     
     public static final BigDecimal DISCOUNT_RATE = BigDecimal.valueOf(0.1);
     private int id;
@@ -81,7 +82,7 @@ public abstract class Product {
         return "Product: id " + id + ", name " + name + ", price " + price + " discount " + getDiscount() + ", rating " + rating.getStars();
     }
     
-    public abstract Product applyRating(Rating newRating);
+public abstract Product applyRating(Rating newRating);
 //    {
 //        return new Product(id, name, price, newRating);
 //    }
@@ -104,6 +105,9 @@ public abstract class Product {
             return this.id == other.id && Objects.equals(this.name, other.name);
         }
         return false;
+    }
+    public LocalDate getBestBefore() {
+        return LocalDate.now();
     }
     
     

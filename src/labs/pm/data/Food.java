@@ -55,7 +55,11 @@ public class Food extends Product {
 
     @Override
     public Product applyRating(Rating newRating) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new Food(getId(), getName(), getPrice(), newRating, bestBefore);
     }
+
+   
+
+   
 
 }
