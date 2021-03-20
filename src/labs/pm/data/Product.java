@@ -102,7 +102,7 @@ public abstract Product applyRating(Rating newRating);
         //if( obj != null && getClass() == obj.getClass()){ // os objetos tem que ser da mesma classe, não pode só ser Product
         if (obj instanceof Product){ // verifica se ID e nome são iguais, podendo os objetos serem do tipo Product.
             final Product other = (Product)obj;
-            return this.id == other.id && Objects.equals(this.name, other.name);
+            return this.id == other.id; //&& Objects.equals(this.name, other.name);
         }
         return false;
     }
